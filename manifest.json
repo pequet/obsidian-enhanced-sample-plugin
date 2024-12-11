@@ -1,0 +1,11 @@
+{
+	"id": "enhanced-sample-plugin",
+	"name": "Enhanced Sample Plugin",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "A highly modularized Obsidian plugin boilerplate with separate files for events, commands, utils, and APIs. Perfect starting point for creating well-structured Obsidian plugins.",
+	"author": "Benjamin Pequet",
+	"authorUrl": "https://github.com/pequet",
+	"fundingUrl": "https://buymeacoffee.com/pequet",
+	"isDesktopOnly": false
+}

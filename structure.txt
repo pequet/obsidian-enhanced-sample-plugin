@@ -1,0 +1,37 @@
+obsidian-enhanced-sample-plugin/
+├── api
+│   └── v1
+│       ├── index.ts
+│       └── strings.ts
+├── commands
+│   ├── convertSelection.ts
+│   └── index.ts
+├── components
+│   ├── SettingsTab.ts
+│   └── StatusBar.ts
+├── events
+│   ├── fileEvents.ts
+│   ├── index.ts
+│   └── intervalEvents.ts
+├── ui
+├── utils
+│   ├── banner.ts
+│   ├── index.ts
+│   └── strings.ts
+├── .gitignore
+├── .hotreload
+├── README.md
+├── data.json
+├── esbuild.config.mjs
+├── main.js
+├── main.ts
+├── manifest.json
+├── package-lock.json
+├── package.json
+├── settings.ts
+├── styles.css
+├── tsconfig.json
+├── types.ts
+├── version-bump.mjs
+└── versions.json
+Generated on: 2024-12-09 03:29:56

@@ -1,0 +1,11 @@
+/* Status bar styling */
+.enhanced-sample-plugin-status {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.enhanced-sample-plugin-status.mod-muted {
+    color: var(--text-muted);
+    opacity: 0.5;
+}
