@@ -67,6 +67,8 @@ obsidian-enhanced-sample-plugin/
 
 - More functions and features will be added to the enhanced-sample-plugin.
 - Modals, Ribbons, and Leaf Panels will be added. 
+- Make sure that the listeners are not duplicated, and properly unregistered. 
+- Debounce mechanism created and added to the Save event trigger.
 
 ## Publishing Your Plugin
 
@@ -81,7 +83,7 @@ This plugin is for educational purposes only, and there is no guarantee that it 
 You can buy me a coffee: 
 https://buymeacoffee.com/pequet 
 
-☕️
+🗒️
 
 
 
