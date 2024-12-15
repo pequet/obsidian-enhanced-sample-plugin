@@ -55,6 +55,11 @@ obsidian-enhanced-sample-plugin/
    - Reduces cognitive load when navigating and maintaining the plugin.
    - Follows best practices in TypeScript and plugin development.
 
+4. **Event Management and Performance**
+   - Proper event listener registration and cleanup.
+   - Implemented debounce mechanism for Save event triggers.
+   - Interactive status bar for real-time feedback.
+
 ### Benefits
 
 - Improved code readability.
@@ -67,8 +72,6 @@ obsidian-enhanced-sample-plugin/
 
 - More functions and features will be added to the enhanced-sample-plugin.
 - Modals, Ribbons, and Leaf Panels will be added. 
-- Make sure that the listeners are not duplicated, and properly unregistered. 
-- Debounce mechanism created and added to the Save event trigger.
 
 ## Publishing Your Plugin
 

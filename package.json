@@ -1,6 +1,6 @@
 {
     "name": "obsidian-enhanced-sample-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A highly modularized Obsidian plugin boilerplate with separate files for events, commands, utils, and APIs. Perfect starting point for creating well-structured Obsidian plugins.",
     "main": "main.js",
     "funding": {

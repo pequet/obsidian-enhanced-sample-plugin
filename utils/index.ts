@@ -2,12 +2,14 @@ import { Plugin } from 'obsidian';
 
 // Import all utility modules
 import * as BannerUtils from './banner';
+import * as DebounceUtils from './debounce';
 import * as StringUtils from './strings';
 // ... import other utility modules
 
 // Define all utility modules
 const UTILITY_MODULES = {
     BannerUtils,
+    DebounceUtils,
     StringUtils,
     // ... other utility modules
 } as const;

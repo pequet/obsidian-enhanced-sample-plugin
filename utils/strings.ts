@@ -1,4 +1,3 @@
-
 /**
  * Converts text to Title Case, handling common articles and conjunctions correctly
  * @param text The string to convert

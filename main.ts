@@ -1,17 +1,18 @@
 import { Plugin } from 'obsidian';
 import { SettingsTab } from './components/SettingsTab';
 import { StatusBar, setupStatusBar } from './components/StatusBar';
-import { registerAllEvents } from './events';
+import { registerAllEvents, unregisterAllEvents } from './events';
 import { registerAllUtils } from './utils';
 import { registerAllCommands } from './commands';
 import { registerAllAPIs } from './api/v1';
 import { DEFAULT_SETTINGS, type EnhancedSamplePluginSettings } from './settings';
 import { EnhancedSamplePluginAPI } from './api/types';
+import { EventListener } from './types';
 
 const PLUGIN_META = {
 
     name:      "Enhanced Sample Plugin",
-    version:   "1.0.0",
+    version:   "1.0.1",
     author:    "Benjamin Pequet",
     github:    "https://github.com/pequet/obsidian-enhanced-sample-plugin",
 	logo:      `
@@ -43,6 +44,7 @@ export default class EnhancedSamplePlugin extends Plugin {
 	settings: EnhancedSamplePluginSettings;
     statusBar: StatusBar;
     api: EnhancedSamplePluginAPI;
+    eventListeners: EventListener[] = [];
 
 	async onload() {
 		console.log('Loading Enhanced Sample Plugin');
@@ -53,20 +55,21 @@ export default class EnhancedSamplePlugin extends Plugin {
 		// Register APIs first so they're available
         registerAllAPIs(this);
 
-		// Register events
-        registerAllEvents(this.app, this);
-
 		// Register utils
         registerAllUtils(this);
-
-		// Register commands
-        await registerAllCommands(this);
 
 		// Add settings tab
 		this.addSettingTab(new SettingsTab(this.app, this));
 
-		// // Setup status bar
-		// this.statusBar = setupStatusBar(this);
+		// Status bar
+		this.statusBar = new StatusBar(this); // Initialize 
+		setupStatusBar(this); 
+
+        // Register all events (typically asynchronous)
+        await registerAllEvents(this.app, this);
+
+		// Register commands
+        await registerAllCommands(this);
 
 		// Banner
 		const logoColor = this.getAnsiColorFromPalette(3, 6); 
@@ -84,6 +87,10 @@ export default class EnhancedSamplePlugin extends Plugin {
 
     onunload() {
         console.log('Unloading Enhanced Sample Plugin');
+        
+        // Unregister all events
+        unregisterAllEvents(this);
+
         if (this.settings.clearDataOnDisable) {
             console.log('Clearing Enhanced Sample Plugin settings on unload');
             this.saveData(null);
